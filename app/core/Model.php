@@ -2,12 +2,14 @@
 
 namespace core;
 
+use lib\Db;
+
 class Model
 {
     protected $db;
 
     public function __construct()
     {
-        $this->db = 'DB';
+        $this->db = Db();
     }
 }
