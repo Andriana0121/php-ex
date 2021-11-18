@@ -16,7 +16,7 @@ class Router
      */
     public function __construct()
     {
-        $arr = require ROOT . "/application/config/routes.php";
+        $arr = require ROOT . "/app/config/routes.php";
         //debug($arr);
         foreach ($arr as $route => $params) {
             $this->add($route, $params);
