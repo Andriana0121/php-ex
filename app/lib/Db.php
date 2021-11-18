@@ -9,7 +9,7 @@ class Db
     protected $db;
     public function  __construct()
     {
-        $dbParams = require ROOT . "/application/config/db.php";
+        $dbParams = require ROOT . "/app/config/db.php";
         $this->db = new PDO(
             'mysql:host=' . $dbParams['host'] . ';dbname=' . $dbParams['dbname'],
             $dbParams['user'],

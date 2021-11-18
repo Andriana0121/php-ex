@@ -10,6 +10,6 @@ class Model
 
     public function __construct()
     {
-        $this->db = Db();
+        $this->db = new Db();
     }
 }

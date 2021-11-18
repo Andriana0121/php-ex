@@ -11,7 +11,7 @@ class View
     public function __construct($route)
     {
         $this->route = $route;
-        $this->path = ROOT . "/application/views/" . $route['controller'] . "/" . $route['action'] . ".php";
+        $this->path = ROOT . "/app/views/" . $route['controller'] . "/" . $route['action'] . ".php";
     }
 
     public function render($title, $vars = [])
@@ -27,14 +27,14 @@ class View
             require $this->path;
             $content = ob_get_clean();
 
-            require ROOT . "/application/views/layouts/" . $this->layout . ".php";
+            require ROOT . "/app/views/layouts/" . $this->layout . ".php";
         }
     }
 
     public static function errorCode($type)
     {
         http_response_code($type);
-        $path = ROOT . "/application/views/errors/" . $type . ".php";
+        $path = ROOT . "/app/views/errors/" . $type . ".php";
         if (file_exists($path)) {
             require $path;
         }
